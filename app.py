@@ -12,7 +12,7 @@ app = Flask(__name__)
 # Hugging Face API settings
 # -------------------------------
 HF_API_URL = "https://api-inference.huggingface.co/models/google/flan-t5-base"
-HF_TOKEN = os.environ.get("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")  # Set this in Heroku/Render/Railway
+HF_TOKEN = os.environ.get("HF_TOKEN")  # Set this in Heroku/Render/Railway
 
 def generate_answer(prompt):
     """Call Hugging Face Inference API"""
@@ -73,3 +73,4 @@ Question:
 # -------------------------------
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+
